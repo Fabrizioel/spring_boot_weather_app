@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" class="h-100" lang="en">
 
 <head>
     <title>Weather App</title>
@@ -8,8 +8,8 @@
     <script th:src="@{/bootstrap.min.js}"></script>
 </head>
 
-<body class="container-fluid">
-    <div class="d-flex justify-content-center p-5">
+<body class="container h-100 d-flex align-items-center justify-content-center">
+    <div class="d-flex justify-content-center align-items-center p-5 flex-column">
         <div class="card border-secondary mb-3 text-center" style="max-width: 18rem;">
             <div class="card-header">Current Temperature</div>
             <div class="card-body text-secondary">
@@ -17,16 +17,10 @@
                 <p th:text="${temperature} + '°'" class="card-text" />
                 <img th:src="${icon}" alt="weather_icon" />
                 <p th:text="${weatherText}" class="card-body" />
-                <div th:switch="${airQuality}">
-                    <p th:case="1" th:style="'color: #40bf32'" th:text="${airQualityText}" />
-                    <p th:case="2" th:style="'color: #8ebf32'" th:text="${airQualityText}" />
-                    <p th:case="3" th:style="'color: #9ebf32'" th:text="${airQualityText}" />
-                    <p th:case="4" th:style="'color: #bfba32'" th:text="${airQualityText}" />
-                    <p th:case="5" th:style="'color: #bf8732'" th:text="${airQualityText}" />
-                    <p th:case="6" th:style="'color: #bf4c32'" th:text="${airQualityText}" />
-                </div>
+                <p th:style="'color: '+${airQualityColor}" th:text="${airQualityText}" />
             </div>
         </div>
+        <a th:href="@{/}" class="btn btn-success" style="max-width: 18rem;">New Search</a>
     </div>
 </body>
 
