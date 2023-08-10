@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <title>Weather App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/bootstrap.min.css}" />
+    <script th:src="@{/bootstrap.min.js}"></script>
+</head>
+
+<body class="container-fluid">
+    <form class="d-flex justify-content-center p-5" th:action="@{/weather}" method="post">
+        <div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Enter city..." th:name="city" />
+                <label for="floatingInput">City</label>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="airQuality" th:name="airQuality"
+                    th:checked="${airQualityCheckbox}" />
+                <label class="form-check-label" for="airQuality">
+                    Air quality
+                </label>
+            </div>
+            <button type="submit" class="btn btn-success w-100">Get weather</button>
+        </div>
+    </form>
+</body>
+
+</html>
