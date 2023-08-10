@@ -93,18 +93,38 @@ public class WeatherController {
 
             /* Return a string according to the index of air quality */
             String airQualityText = "";
+            String airQualityColor = "";
             switch (airQualityIndex) {
-                case 1 -> airQualityText = Constants.GOOD_AQ;
-                case 2 -> airQualityText = Constants.MODERATE_AQ;
-                case 3 -> airQualityText = Constants.UNHEALTHY_SG_AQ;
-                case 4 -> airQualityText = Constants.UNHEALTHY_AQ;
-                case 5 -> airQualityText = Constants.VERY_UNHEALTHY_AQ;
-                case 6 -> airQualityText = Constants.HAZARDOUS_AQ;
+                case 1:
+                    airQualityText = Constants.GOOD_AQ;
+                    airQualityColor = Constants.GOOD_AQ_COLOR;
+                    break;
+                case 2:
+                    airQualityText = Constants.MODERATE_AQ;
+                    airQualityColor = Constants.MODERATE_AQ_COLOR;
+                    break;
+                case 3:
+                    airQualityText = Constants.UNHEALTHY_SG_AQ;
+                    airQualityColor = Constants.UNHEALTHY_SG_AQ_COLOR;
+                    break;
+                case 4:
+                    airQualityText = Constants.UNHEALTHY_AQ;
+                    airQualityColor = Constants.UNHEALTHY_AQ_COLOR;
+                    break;
+                case 5:
+                    airQualityText = Constants.VERY_UNHEALTHY_AQ;
+                    airQualityColor = Constants.VERY_UNHEALTHY_AQ_COLOR;
+                    break;
+                case 6:
+                    airQualityText = Constants.HAZARDOUS_AQ;
+                    airQualityColor = Constants.HAZARDOUS_AQ_COLOR;
+                    break;
             }
 
             /* Send air quality index & text to html view */
             model.addAttribute("airQuality", airQualityIndex);
             model.addAttribute("airQualityText", airQualityText);
+            model.addAttribute("airQualityColor", airQualityColor);
         }
 
         return "weather";
