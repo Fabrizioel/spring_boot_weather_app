@@ -103,6 +103,7 @@ public class WeatherController {
             }
 
             /* Send air quality index & text to html view */
+
             model.addAttribute("airQuality", airQualityIndex);
             model.addAttribute("airQualityText", airQualityText);
         }
