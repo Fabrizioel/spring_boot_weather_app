@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns:th="http://www.thymeleaf.org" class="h-100" lang="en">
 
 <head>
     <title>Weather App</title>
@@ -8,7 +8,17 @@
     <script th:src="@{/bootstrap.min.js}"></script>
 </head>
 
-<body class="container-fluid">
+<body class="container h-100 d-flex align-items-center justify-content-center flex-column">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="current-tab" data-bs-toggle="tab" data-bs-target="#current-tab-pane"
+                type="button" role="tab" aria-controls="current-tab-pane" aria-selected="true">Current</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="forecast-tab" data-bs-toggle="tab" data-bs-target="#forecast-tab-pane"
+                type="button" role="tab" aria-controls="forecast-tab-pane" aria-selected="false">Forecast</button>
+        </li>
+    </ul>
     <form class="d-flex justify-content-center p-5" th:action="@{/weather}" method="post">
         <div>
             <div class="form-floating mb-3">

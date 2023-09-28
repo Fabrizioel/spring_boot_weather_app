@@ -1,6 +1,6 @@
-package com.example.demo.Model;
+package com.example.weatherforecast.models.current;
 
-public class WeatherResponse {
+public class CurrentWeatherResponse {
 
     /* Get current weather element from JSON response */
     private CurrentWeather current;

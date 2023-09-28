@@ -1,4 +1,4 @@
-package com.example.demo.Constants;
+package com.example.weatherforecast.enums;
 
 public class Constants {
     /* Yes or No for API call */

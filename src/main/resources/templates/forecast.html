@@ -13,11 +13,7 @@
         <div class="card border-secondary mb-3 text-center" style="max-width: 18rem;">
             <div class="card-header">Current Temperature</div>
             <div class="card-body text-secondary">
-                <h5 th:text="${city}" class="card-title" />
-                <p th:text="${temperature} + '°'" class="card-text" />
-                <img th:src="${icon}" alt="weather_icon" />
-                <p th:text="${weatherText}" class="card-body" />
-                <p th:if="${airQualityIncluded}" th:style="'color: '+${airQualityColor}" th:text="${airQualityText}" />
+                <h5 th:text="'Prueba'" class="card-title" />
             </div>
         </div>
         <a th:href="@{/}" class="btn btn-success" style="max-width: 18rem;">New Search</a>

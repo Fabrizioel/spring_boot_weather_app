@@ -1,4 +1,4 @@
-package com.example.demo.Model;
+package com.example.weatherforecast.models.current;
 
 public class CurrentCondition {
 
